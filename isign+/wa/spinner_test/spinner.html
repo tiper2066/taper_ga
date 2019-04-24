@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>스피너 아이콘 시안</title>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-box-sizing: border-box; }
+    .wrap { min-width: 1200px; margin: 0 auto;  }
+
+    /* menu */
+    #menu { width: 1000px; margin: 30px auto; }
+    #menu ul { text-align: center; }
+    #menu ul li { display: inline-block; text-align: center; }
+    #menu ul li a { 
+        display: block; padding: 5px 15px; text-decoration: none;  
+        font-size: 16px; font-weight: 500; color: #666; transition: all 0.3s;
+    }
+    #menu a.ov { color: #1471a7; text-decoration: underline; }
+    #menu a.on { color: #fff; background-color: #1471a7; }
+
+    /*----------- samples ------------*/
+    #container { 
+        position: relative; width: 771px; height: 595px; margin: 0 auto; 
+        background: url("./bg.jpg"); 
+    }
+    #container div { width: 32px; height: 32px; }
+    #container .icon1, #container .icon2, #container .icon3, #container .icon4 { display: none; position: absolute; left: 128px; top: 136px; }
+    #container .icon5, #container .icon6, #container .icon7, #container .icon8, #container .icon9 { display: none; position: absolute; left: 138px; top: 286px; }
+
+    /*----------- 저장매체 영역 ----------*/
+    .icon1 { 
+        background: url("./spinner_01.gif");
+    }
+    .icon2 {
+        background: url("./spinner_02.gif");
+    }
+    .icon3 {
+        background: url("./spinner_03.gif");
+    }    
+    .icon4 {
+        background: url("./spinner_04.gif");
+    }    
+
+    /*------------- 인증서 선택창 영역 --------------*/
+    .icon5 {
+        background: url("./spinner_01.gif");
+    }
+    .icon6 {
+        background: url("./spinner_02.gif");
+    }
+    .icon7 {
+        background: url("./spinner_03.gif");
+    }    
+    .icon8 {
+        background: url("./spinner_04.gif");
+    }  
+    .icon9 {
+        background: url("./spinner_05.gif");
+    }        
+    </style>
+    <script>
+    $(function() {
+
+        // 페이지 로딩되면 처음에 보여질 아이콘들
+        $("#container .icon1").css({"display" : "block"});
+        $("#container .icon6").css({"display" : "block"});        
+
+        $("#menu a").hover(
+            function() {
+                $(this).addClass("ov");
+            },
+            function() {
+                $("#menu a").removeClass("ov");
+            }
+        );
+
+        $("#menu a").click(function() {            
+            $("#menu a").removeClass("on");
+            $(this).addClass("on");
+
+            $("#container div").css({"display" : "none"});     // 모든 아이콘을 숨긴다
+            var i = $(this).parent().index();    // 클릭한 li의 index 저장
+
+            if(i == 0) {           // sample 1
+                $("#container .icon1").css({"display" : "block"});
+                $("#container .icon6").css({"display" : "block"});
+            } else if(i == 1) {    // sample 2
+                $("#container .icon1").css({"display" : "block"});
+                $("#container .icon7").css({"display" : "block"});
+            } else if(i == 2) {    // sample 3
+                $("#container .icon1").css({"display" : "block"});
+                $("#container .icon8").css({"display" : "block"});
+            } else if(i == 3) {    // sample 4
+                $("#container .icon2").css({"display" : "block"});
+                $("#container .icon5").css({"display" : "block"});
+            } else if(i == 4) {    // sample 5
+                $("#container .icon2").css({"display" : "block"});
+                $("#container .icon7").css({"display" : "block"});
+            } else if(i == 5) {    // sample 6
+                $("#container .icon2").css({"display" : "block"});
+                $("#container .icon8").css({"display" : "block"});                
+            } else {               // sample 7
+                $("#container .icon2").css({"display" : "block"});
+                $("#container .icon9").css({"display" : "block"});
+            }
+        });
+    });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div id="menu">
+            <ul>
+                <li><a href="#" class="on">Sample 01</a></li>
+                <li><a href="#">Sample 02</a></li>
+                <li><a href="#">Sample 03</a></li>
+                <li><a href="#">Sample 04</a></li>
+                <li><a href="#">Sample 05</a></li>
+                <li><a href="#">Sample 06</a></li>
+                <li><a href="#">Sample 07</a></li>                
+            </ul>
+        </div>
+        <div id="container">
+            <div class="icon1"></div>
+            <div class="icon2"></div>
+            <div class="icon3"></div>
+            <div class="icon4"></div>
+            <div class="icon5"></div>
+            <div class="icon6"></div>  
+            <div class="icon7"></div>  
+            <div class="icon8"></div>   
+            <div class="icon9"></div>                                                
+        </div>    
+    </div>
+</body>
+</html>
