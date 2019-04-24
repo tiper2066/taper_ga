@@ -69,10 +69,12 @@
         $("#container .icon6").css({"display" : "block"});        
 
         $("#menu a").hover(
-            function() {
+            function(e) {
+                e.preventDefault();
                 $(this).addClass("ov");
             },
-            function() {
+            function(e) {
+                e.preventDefault();
                 $("#menu a").removeClass("ov");
             }
         );
