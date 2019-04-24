@@ -1,0 +1,248 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900');
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; }
+body { 
+    font-family: "Noto Sans KR", sans-serif; color: #ccc; font-size: 12px; font-weight: 100; background-color: #000;  
+    width: 100%; height: 100%; 
+}
+
+/*==================== comman ==========================*/
+
+/*------------- header : title & main menu ----------*/
+#wrap { max-width: 1200px; min-width: 800px; margin: 0 auto; }
+header h1 { font-size: 2rem; font-weight: 300; height: 100px; line-height: 100px; color: #ccc; text-align: center; }
+#menu { width: 100%; text-align: center; margin-bottom: 20px; }
+#menu li { display: inline-block; text-align: center; }
+#menu li a {
+    display: block; padding: 5px 10px; font-size: 0.9rem; font-weight: 100; background-color: #333; color: #aaa;
+}
+#menu li a:hover, #menu li a.on { color: #fff; background-color: #1891e0; font-weight: 300; }
+
+/*------------- case block : title & description , sub menu ----------*/
+#case1, #case2, #case3, #case4, #case5, #case6 { width: 100%; margin-bottom: 100px; display: none; }    /* 처음에 ui case 블럭 숨기기 */
+#case1 .section1 h2, #case2 .section1 h2, #case3 .section1 h2, #case4 .section1 h2, #case5 .section1 h2, #case6 .section1 h2, 
+#result1 h2, #result2 h2, #result3 h2, #result4 h2, #result5 h2, #result6 h2
+{ font-size: 1.2rem; font-weight: 300; height: 30px; line-height: 30px; margin-top: 50px; padding-bottom: 40px; }
+#view {    /* 개선안 블록 바로가기  */
+    display: inline-block; height: 20px; line-height: 20px; padding: 0 5px; margin-left: 30px; 
+    background-color: #f90; font-size: 0.8rem; color: #000; 
+}
+#view:hover { background-color: #fa0; }
+#case1 .section1 .desc, #case2 .section1 .desc, #case3 .section1 .desc, #case4 .section1 .desc, #case5 .section1 .desc, #case6 .section1 .desc
+{ font-size: 0.9rem; line-height: 1.2rem; margin-bottom: 20px; }
+#case1.on, #case2.on, #case3.on, #case4.on, #case5.on, #case6.on { display: block; }     /* UI caase 블럭 보이기 */
+#result1, #result2, #result3, #result4, #result5, #result6 { margin: 20px 0; } 
+#result1 p, #result2 p, #result3 p, #result4 p, #result5 p, #result6 p { font-size: 0.9rem; line-height: 1.2rem; } 
+#result1 span, #result2 span, #result3 span, #result4 span, #result5 span, #result6 span { font-size: 0.9rem; color: #0f9; }  /* 개선안 블록 */
+
+/*---------------- input - Button --------------*/
+input[type="button"] { 
+    height: 32px; line-height: 32px; padding: 0 45px; font-size: 0.9rem; font-weight: 400;
+    color: #fff; transition: all 0.1s; background-color: #7e8ea8; border: 0; outline: 0;
+    -webkit-appearance: none;
+}
+input[type="button"]:hover { background-color: #2d333f; }
+input[type="button"]:active {  background-color: #374256; } 
+
+/*------------- Input - text ----------*/
+input[type="text"], input[type="password"] { 
+    width: 240px; height: 32px; border: 1px solid #cbd3e0; font-size: 0.9rem; font-weight: 100;
+    color: #6c727e; padding: 0 5px; transition: all 0.3s;
+}
+input[type="text"]:focus, input[type="password"]:focus,
+input[type="text"]:hover, input[type="password"]:hover
+{ border: 1px solid #1891e0; }
+input[type="text"]::placeholder, input[type="password"]::placeholder { color: #6c727e; font-size: 0.8rem; }
+
+/*---------------- input - checkbox --------------*/
+input[type="checkbox"] { 
+    display: inline-block; width: 16px; height: 16px; line-height: 16px; 
+    vertical-align: middle; margin-top: 2px; margin-left: 5px;
+}
+
+/*---------------- input - radio button --------------*/
+input[type="radio"] { 
+    display: inline-block; width: 16px; height: 16px; line-height: 16px; 
+    vertical-align: baseline;  margin-right: 3px; 
+}
+
+/*---------------- goto top 버튼 --------------*/
+#btn_top { position: fixed; right: 20px; bottom: 20px; font-size: 3rem; }
+#btn_top a { color: #888; } #btn_top a:hover { color: #1891e0; }
+
+
+/* ui 내부의 콘트롤들의 개별 위치 설정을 위해서 */
+#case1 .section2, #case2 .section2, #case2 .section2, #case3 .section2, #case4 .section2, #case5 .section2, #case6 .section2
+{ width: 1200px; height: 720px; margin-bottom: 200px; }   
+
+/*======================================================*/
+/*==================== case 1 ==========================*/
+/*======================================================*/
+
+/*------------- Light 스킨 ----------*/
+#case1 .section2 {    /*------------- 배경이미지 ----------*/
+    display: block; position: relative; width: 1200px; height: 720px; background: url("../img/dcc_001.png") center center; 
+}
+#case1 .section2 .ui { position: absolute; left: 478px; top: 383px; }   /* light skin 컨테이너 */
+
+/*------------- Light 스킨 : 취소 버튼 색상 ----------*/
+#btn_cancel { background-color: #6c727e; }
+#btn_cancel:hover { background-color: #2d333f; }
+#btn_cancel:active { background-color: #374256; }
+
+#case1 .section1 > div > label { font-size: 1rem; }  /* 체크박스 라벨 */
+#case1 .section1 > div { margin-bottom: 20px; }
+
+#color1 {    /* 색상 표시 - light skin */
+    position: absolute; color: #7e8ea8; font-size: 1rem; font-weight: 100; left: -150px; top: 100px; text-align: center; width: 550px; 
+}  
+#color2 {    /* 색상 표시 - dark skin */
+    position: absolute; color: #7e8ea8; font-size: 1rem; font-weight: 100; left: -150px; top: 100px; text-align: center; width: 550px; 
+}  
+
+/*------------- Dark 스킨  ----------*/
+
+#case1 .section3 {   /*------------- 배경이미지 ----------*/
+    display: none; position: relative; width: 1200px; height: 720px; background: url("../img/dcc_001_2.png") center center; 
+}
+#case1 .section3 .ui { position: absolute; left: 750px; top: 553px; }   /* dark skin 컨테이너 */
+#case1 section h3 { font-size: 1rem; font-weight: 300; line-height: 1.2rem; }  /* 스킨 버전 타이틀 */
+#case1 section p { line-height: 1.5rem; }   /* 개선 가이드 본문 */
+
+
+/*======================================================*/
+/*==================== case 2 ==========================*/
+/*======================================================*/
+
+#case2 .section1 .direct { height: 15px; line-height: 15px; }
+#case2 .section1 > div { margin-bottom: 20px; }
+#case2 .section1 > div > label { font-size: 1rem; }
+#case2 .section1 p:last-child { font-size: 0.9rem; color: #f90; }
+#case2 .section1 #viewtxt1 span { font-weight: 400; }    /* 로그인 버튼 클릭 안내 문자  */
+
+/*------------- 배경이미지 ----------*/
+#case2 .section2 { position: relative; width: 1200px; height: 720px; background: url("../img/dcc_002_1.jpg") center center; }
+
+/*==================== 직접 표시 개선안  ==========================*/
+
+#case2 .section2 .direct { position: absolute; left: 479px; top: 414px; }   /* 컨테이너 */
+
+#btn_login2 { padding: 0 101px; margin-bottom: 5px; }     /* 로그인 버튼 */
+
+/* 메시지 영역 */
+#case2 .section2 .direct .msg_cont { display: none; overflow: hidden; }
+#case2 .section2 .direct .msg_cont.on { display: block; }
+#case2 .section2 .direct .txt { color: #e85142; font-size: 0.9rem; font-weight: 300; }  /* 오류텍스트 */
+#case2 .section2 .direct .msg_cont > div { float: left; }
+#case2 .section2 .direct .msg_cont > div[class="txt"] { padding-left: 8px; width: 250px; line-height: 1.2rem; font-weight: 400; }
+#case2 .section2 .direct .msg_cont > div[class="txt"] a { font-size: 0.8rem; }     /* 자세히 보기 링크 */
+#case2 .section2 .direct .msg_cont > div[class="txt"] a:hover { color: #2d333f; text-decoration: underline; }
+
+/*==================== 팝업창 표시 개선안  ==========================*/
+
+#case2 .section2 .popupwin { position: absolute; display: none; left: 379px; top: 214px; }   /* 컨테이너 */
+
+#viewtxt2 { display: none; }   /* 팝업창 표시 지시글 -- 첨에 숨김  */
+#case2 section:nth-child(3) #result3 { display: none; }  /* 팝업창 표시 개선가이드, 처음에 숨김  */
+#case2 .section2 .err_trigger {     /* 에러 발생 상황에 대한 알림 문자 */
+    position: absolute; display: none; top: 300px; left: 400px; font-size: 1.2rem; font-weight: 500; color: #e85142; 
+    background-color: #fff; padding: 10px; line-height: 2rem;
+}
+#case2 .section2 #btn_error {      /* 에러 발생 버튼 */
+    position: absolute; display: none; top: 580px; left: 258px;
+}
+
+/*--------------팝업 윈도우 ------------*/
+#popup { 
+    position: relative; width: 500px; height: 340px; padding: 0 20px 15px 20px; border: 2px solid #6c727e; background-color: #fff; 
+} 
+#popup { border-top: 5px solid #6c727e; } 
+#popup .icon {          /* icon */
+    width: 100%; text-align: center; background-color: #fff; vertical-align: middle;
+} 
+#popup .icon img { width: 40px; padding: 30px 0 20px 0; }     /* icon 크기 */
+#popup .icon h2 { color: #1891e0; padding-bottom: 30px; font-size: 1rem; font-weight: 500; }      /* title */
+#popup .parag p { font-size: 0.8rem; font-weight: 400; color: #6c727e; line-height: 1.2rem; }    /* 메시지 내용 */
+#popup .parag ul { margin: 10px 0 30px 0; color: #6c727e; }
+#popup .parag ul li { line-height: 1.2rem; }
+#popup .parag ul li:first-child { font-size: 0.9rem; font-weight: 500; } 
+#popup .parag ul li:last-child { font-size: 0.8rem; font-weight: 300; } 
+#popup .option { float: left; width: 300px; height: 30px; line-height: 30px; }
+#popup .option input { vertical-align: baseline; margin-left: -3px; }
+#popup .option label { display: inline-block; color: #6c727e; font-size: 0.8rem; font-weight: 300; padding: 0 5px; }
+#popup .bt_area { float: right; }
+
+
+/*======================================================*/
+/*==================== case 3 ==========================*/
+/*======================================================*/
+
+/*------------- 배경이미지 ----------*/
+#case3 .section2 { position: relative; width: 1200px; height: 720px; background: url("../img/dcc_003.png") center center; }
+#case3 .section2 .ui { position: absolute; left: 600px; top: 284px; }   /* 컨테이너 */
+#case3 .section2 div input:nth-child(3) { margin-top: 10px; }     /* 설치경로 필드 */
+#case3 .section2 div img { position: relative; margin-left: 10px; }
+#bubble {       /* 풍선 메시지 박스 */
+    content: ""; display: none; width: 200px; margin: 10px 0 0 155px; 
+    background-color: #f4e98b; border-radius: 3px; padding: 10px; border: 1px solid #cbd3e0;
+}
+/* #bubble::after {
+    content: ""; display: block; position: absolute; width: 0; height: 0;
+    left: 248px; top: 69px; 
+    border-top: 8px solid rgba(255,246,168,0); border-left: 8px solid rgba(255,246,168,0);
+    border-right: 8px solid rgba(255,246,168,0); border-bottom: 8px solid #f4e98b;
+} */
+#bubble p { font-size: 0.8rem; color: #6c727e; line-height: 1rem; margin-bottom: 10px; }
+#bubble a { color: #6c727e; font-weight: 300; }
+
+/*======================================================*/
+/*==================== case 4 ==========================*/
+/*======================================================*/
+
+/*------------- 배경이미지 ----------*/
+#case4 .section2 { position: relative; width: 1200px; height: 720px; background: url("../img/dcc_004.png") center center; }
+#case4 .section2 .ui { position: absolute; left: 260px; top: 170px; }   /* 컨테이너 */
+
+/*------------- 테이블 ----------*/
+#tb { width: 911px; }
+#tb tr { border-bottom: 1px solid #d8dee8; background-color: #3c4c66; }
+#tb tr:nth-child(2n+1) { background-color: #eceff4; }
+#tb tr:nth-child(2n) { background-color: #fff; }
+#tb tr td { color: #6c727e; font-weight: 300; text-align: center; height: 37px; line-height: 37px; }
+#tb tr:hover td {  cursor: default; }  
+#tb td:nth-child(1) { width: 28px; }
+#tb td:nth-child(2) { width: 125px; }
+#tb td:nth-child(3) { width: 125px; }
+#tb td:nth-child(4) { width: 243px; }
+#tb td:nth-child(5) { width: 92px; }
+#tb td:nth-child(6) { width: 92px; }
+#tb td:nth-child(7) { width: 62px; }
+#tb td:nth-child(8) { width: 145px; }
+
+
+/*======================================================*/
+/*==================== case 5 ==========================*/
+/*======================================================*/
+
+/*------------- 배경이미지 ----------*/
+#case5 .section2 { position: relative; width: 1200px; height: 720px; background: url("../img/dcc_005_1.png") center center; }
+#case5 .section2 .ui { position: absolute; right: 29px; top: 9px; }   /* 컨테이너 */
+#icon_expand a { display: block; width: 13px; height: 13px; }    /* 확대 아이콘 */
+#max_win { 
+    position: absolute; width: 1500px; height: 1000px; top: 0; left: -150px;
+    background: url("../img/dcc_005_2.png") center center; display: none;     /*  처음에 숨김   */ 
+}
+#org_icon { position: relative; left: 1456px; top: 9px; }  /* 크기 복원 아이콘 */
+#org_icon img { width: 14px; height: 14px; }
+
+/*======================================================*/
+/*==================== case 6 ==========================*/
+/*======================================================*/
+#case6 .section2 { position: relative; width: 1200px; height: 720px; background: url("../img/dcc_006.png") center center; }
+#case6 .section2 .ui { position: absolute; left: 269px; top: 133px; }   /* 컨테이너 */
+#arrow li { display: inline-block; margin-right: 16px; }
+#arrow li:last-child { margin-right: 0; }
+#arrow li a { display: block; padding: 0 0 0 180px; height: 32px; line-height: 32px; }
+#arrow li a:hover { cursor: default; }
+#arrow li a i { color: #7e8ea8; }
+#arrow li a:hover i { color: #6c727e; }
