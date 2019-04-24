@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <title>Intelligent WAPPLES 5.0</title>
+  <link rel="shortcut icon" href="./favicon.ico">
+  <!-- 폰트 아이콘 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">    
+  <link rel="stylesheet" href="./css/reset200802.css">
+  <link rel="stylesheet" id="change_skin" href="./css/style_light.css">
+  <script src="./js/jquery-3.3.1.min.js"></script>
+  <script src="./js/app.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>   <!-- 구글지도 API -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script> <!-- chart.js 바 차트 API -->
+  <!--[if IE 8]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+  <header id="main_header">
+    <nav id="main_nav">
+      <div class="title">      <!-- 로고와 햄버거 메뉴 -->
+        <ul>
+          <li class="logo"><a href="index.html"><img src="./img/wapples_logo.svg" alt="wapples logo"></a></li>   <!-- WAPPLES 로고 -->
+          <li class="logo_sm"><a href="index.html"><img src="./img/wapples_logo_sm.svg" alt="wapples logo"></a></li>  <!-- W 로고 -->
+          <li class="ham_icon"><a href="#" alt="hamberger icon"><i class="fas fa-bars"></i></a></li>    
+        </ul>
+      </div>
+      <div class="topmenu">     <!-- 우측 툴메뉴 아이콘 -->
+        <ul>
+          <li class="user"><a href="#"><i class="far fa-user"></i> Gianna Jean <i class="fas fa-caret-down"></i></a></li>    <!-- user id -->
+          <li class="notice"><a href="#" title="alert"><i class="far fa-bell"></i></a></li>      <!-- alert -->
+          <li class="setup"><a href="#" title="setup"><i class="fas fa-sliders-h"></i></a></li>      <!-- setup -->
+          <li class="logout"><a href="./login.html" title="logout"><i class="fas fa-power-off"></i></a></li>     <!-- button logout -->
+        </ul>
+      </div>
+
+      <!--////// 사용자 메뉴 팝업  //////-->
+      <div id="userMenuPopup">
+        <ul>
+          <li><a href=""><i class="fas fa-user-tie"></i> Profile</a></li>
+          <li><a href=""><i class="fas fa-envelope"></i> E-Mail</a></li>
+          <li><a href="./login.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+      </div>      
+
+      <!--////// 알림 팝업  //////-->
+      <div id="alertPopUp">
+        <ul>
+          <li class="title">일일 점검 상태</li>     <!-- 제목 -->
+          <li class="list">               <!-- 목록 -->
+            <ul>
+              <li>
+                <i class="fas fa-bomb"></i>
+                <div>
+                  <h2>가용량 메모리 위험</h2>
+                  <p>가용 메모리 양이 현재 125864KB로 위험 상태입니다. - 알릴 방법: [이메일], 대응: 0</p>
+                  <p>2019-03-26 08:46:26</p>        
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-exclamation-triangle"></i>
+                <div>
+                  <h2>가용량 메모리 경고</h2>
+                  <p>가용 메모리 양이 현재 120120KB로 위험 상태입니다. - 알릴 방법: [이메일], 대응: 0</p>
+                  <p>2019-03-26 08:46:20</p>
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-bomb"></i>
+                <div>
+                  <h2>가용량 메모리 위험</h2>
+                  <p>가용 메모리 양이 현재 125864KB로 위험 상태입니다. - 알릴 방법: [이메일], 대응: 0</p>
+                  <p>2019-03-26 08:46:26</p>        
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-exclamation-triangle"></i>
+                <div>
+                  <h2>가용량 메모리 경고</h2>
+                  <p>가용 메모리 양이 현재 120120KB로 위험 상태입니다. - 알릴 방법: [이메일], 대응: 0</p>
+                  <p>2019-03-26 08:46:20</p>
+                </div>
+              </li>                 
+            </ul>
+          </li>
+          <li>
+            <p id="viewall"><a href="#">알림 모두 보기</a></p>
+          </li>              
+        </ul>
+      </div>
+
+      <!--////// 설정 패널  //////-->
+      <div id="setupPanel">
+        <h2>설정</h2>
+        <p><label for="memo"><input type="checkbox" id="memo"> &nbsp; 감사로그 메모 사용</label></p>
+        <p class="setdesc">- 저장시 감사로그 메모 <br>&nbsp;&nbsp;사용 여부</p>
+        <h2>스킨</h2>
+        <p class="skin"><label for="lb" id="light"><input type="radio" name="skin" id="lb" checked> &nbsp; Light Blue</label></p>
+        <p class="skin"><label for="db" id="dark"><input type="radio" name="skin" id="db"> &nbsp; Dark Blue</label></p>
+      </div>        
+
+    </nav>        
+  </header>
+
+  <div id="menu">       <!-- 좌측 메뉴 -->
+
+    <div class="wrap">
+      <span class="expand">MENU</span><a href="#"><i class="fas fa-angle-double-down"></i></a>
+      <!-- 대시보드 -->
+      <ul>
+        <li><a href="#"><img src="./img/ico_dashboard.svg" alt="dashboard"> 대시보드<i class="fas fa-caret-down"></i></a>
+          <ul>
+            <li><a href="#" id="btn_dash">- 요약</a></li>
+            <li><a href="#">- 탐지 현황</a></li>
+            <li><a href="#">- 서비스 현황</a></li>
+            <li><a href="#">- 시스템 현황</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- 통계분석 -->
+      <ul>
+        <li><a href="#"><img src="./img/ico_analysis.svg" alt="analysis"> 통계 분석<i class="fas fa-caret-down"></i></a>
+          <ul>
+            <li><a href="#">- 그래프</a></li>
+            <li><a href="#">- 탐지 검토</a></li>
+          </ul>
+        </li>
+      </ul>      
+      <!-- 로그조회 -->
+      <ul>
+        <li><a href="#"><img src="./img/ico_logsearch.svg" alt="log search"> 로그 조회<i class="fas fa-caret-down"></i></a>
+          <ul>
+            <li><a href="#">- 탐지로그</a></li>
+            <li><a href="#">- 감사로그</a></li>
+            <li><a href="#">- 웹 사이트 로그</a></li>
+            <li><a href="#">- 내보내기 목록</a></li>
+          </ul>
+        </li>
+      </ul>   
+      <!-- 탐지설정 -->
+      <ul>
+        <li><a href="#"><img src="./img/ico_detection.svg" alt="detect setting">탐지 설정<i class="fas fa-caret-down"></i></a>
+          <ul>
+            <li><a href="#">- 서버</a></li>
+            <li><a href="#">- 차단 정책</a></li>
+            <li><a href="#">- 탐지 정책</a></li>
+            <li><a href="#">- 탐지 예외</a></li>
+            <li><a href="#">- 패턴 저장소</a></li>
+            <li><a href="#">- 기타</a></li>
+          </ul>
+        </li>
+      </ul>  
+      <!-- 보고서 -->
+      <ul>
+        <li><a href="#"><img src="./img/ico_report.svg" alt="report">보고서<i class="fas fa-caret-down"></i></a>
+          <ul>
+            <li><a href="#">- 보고서 생성</a></li>
+            <li><a href="#" id="btn_report">- 보고서 목록</a></li>
+            <li><a href="#">- 보고서 전송 예약</a></li>
+          </ul>
+        </li>
+      </ul>        
+      <!-- 환경설정 -->
+      <ul>
+        <li><a href="#"><img src="./img/ico_report.svg" alt="settings">환경 설정<i class="fas fa-caret-down"></i></a>
+          <ul>
+            <li><a href="#">- 운영</a></li>
+            <li><a href="#">- DB</a></li>
+            <li><a href="#">- 연동</a></li>
+            <li><a href="#">- 네트워크</a></li>
+            <li><a href="#">- 시스템</a></li>
+          </ul>
+        </li>
+      </ul>                   
+    </div>
+
+  </div>
+
+  <div id="content" class="clearfix">      <!-- CONTENT : 대시보드 -->
+    <div class="wrap">
+
+      <div class="path">    <!-- 타이틀 및 경로 -->
+        <ul>
+          <li><img src="./img/ico_dashboard.svg" alt="dashboard"> <span>대시보드</span></li>
+          <li>/ 요약</li>
+          <li> : 아래 탐지 관련 내용은 1일간 데이터 탐지로그를 기반으로 작성되었습니다.</li>
+        </ul>
+        <ul id="ex-icon">     <!-- 툴 아이콘 메뉴 -->
+          <li><a href="https://192.168.41.103/manual/ko/#dashboard" target="_blank" title="도움말" alt="help"><i class="fas fa-question"></i></a></li>   <!-- 도움말 -->
+          <li id="refresh"><a href="#" title="새로고침" alt="refresh"><i class="fas fa-sync"></i></a></li>   <!-- 새로고침 -->
+          <li><a href="#" title="새창으로 확장" alt="expand"><i class="fas fa-external-link-alt"></i></a></li>   <!-- 확장 -->
+        </ul>
+      </div>
+
+      <!-- 상단 그룹 박스 -->
+      <div id="top_group" class="clearfix">
+        <div class="det">
+          <ul>
+            <li>탐지건수</li>
+            <li><i class="fas fa-caret-down"></i><span>351건</span> from last 5 second</li>
+          </ul>
+          <div>300건</div>
+        </div>
+        <div class="thr"> 
+          <ul>
+            <li>Throughput</li>
+            <li><i class="fas fa-caret-up"></i><span>232.00</span> from last 5 second</li>
+          </ul>
+          <div>6</div>          
+        </div>
+        <div class="tps">
+          <ul>
+            <li>tps</li>
+            <li><i class="fas fa-caret-down"></i><span>289</span> from last 5 second</li>
+          </ul>
+          <div>240</div> 
+        </div>
+        <div class="cps">
+          <ul>
+            <li>CPS</li>
+            <li><i class="fas fa-caret-down"></i><span>443</span> from last 5 second</li>
+          </ul>
+          <div>17</div> 
+        </div>
+      </div>
+
+      <!-- 중단 그룹 박스 -->
+      <div id="cen_group">
+        <div class="map">
+          <div class="g_map">
+            <div id="regions_div" ></div>    <!-- 구글지도 -->
+          </div>
+          <div class="ip_top">
+            <h2>공격자 IP별 Top 10</h2>
+            <table>
+              <tr><td>-</td><td>-</td></tr>
+              <tr><td>-</td><td>-</td></tr>
+              <tr><td>-</td><td>-</td></tr>
+              <tr><td>-</td><td>-</td></tr>
+              <tr><td>-</td><td>-</td></tr>
+              <tr><td>-</td><td>-</td></tr>
+              <tr><td>-</td><td>-</td></tr>
+              <tr><td>-</td><td>-</td></tr>
+              <tr><td>-</td><td>-</td></tr>
+              <tr><td>-</td><td>-</td></tr>
+            </table>
+          </div>
+          <div class="web_top">
+            <h2>웹 사이트별 Top 10</h2>
+            <table>
+              <tr><td>-</td><td>-</td></tr>
+              <tr><td>-</td><td>-</td></tr>
+              <tr><td>-</td><td>-</td></tr>
+              <tr><td>-</td><td>-</td></tr>
+              <tr><td>-</td><td>-</td></tr>
+              <tr><td>-</td><td>-</td></tr>
+              <tr><td>-</td><td>-</td></tr>
+              <tr><td>-</td><td>-</td></tr>
+              <tr><td>-</td><td>-</td></tr>
+              <tr><td>-</td><td>-</td></tr>
+            </table>            
+          </div>
+        </div>
+      </div>    
+      
+      <!-- 하단 그룹 박스 -->
+      <div id="bt_group">
+        <div class="use">
+          <h2>WAPPLES 사용률</h2>
+          <div>
+            <canvas id="bar-chart-horizontal"></canvas>      <!-- chart.js 바 챠트 API -->
+          </div>
+        </div>
+        <div class="check">
+          <h2>점검 상태</h2>
+          <div>
+            <table>
+                <tr><th>항목</th><th>상태</th></tr>
+            </table> 
+            <div class="scroll">
+              <table>
+                <tr><td>가용 메모리</td><td class="warning">경고</td></tr>
+                <tr><td>가용 사용자 인덱스 버퍼</td><td>정상</td></tr>
+                <tr><td>네트워크 카드 링크</td><td>정상</td></tr>
+                <tr><td>가용 커널 버퍼</td><td>정상</td></tr>
+                <tr><td>디스크 상태</td><td>정상</td></tr>
+                <tr><td>패킷 처리 타임아웃</td><td>정상</td></tr>
+                <tr><td>프로세스 별 CPU 사용량</td><td>정상</td></tr>
+                <tr><td>디스크 사용량</td><td>정상</td></tr>
+                <tr><td>CPS</td><td>정상</td></tr>
+                <tr><td>CPU별 사용량</td><td>정상</td></tr>
+                <tr><td>네트워크 필터 수</td><td>정상</td></tr>
+              </table>  
+            </div>            
+          </div>
+        </div>
+        <div class="status">
+          <h2>WAPPLES 상태</h2>
+          <table>
+            <tr><td>현재 서버 시간</td><td>2019-03-25 09:44:39 AM</td></tr>
+            <tr><td>PSU</td><td>지원하지 않음</td></tr>
+            <tr><td>Raid</td><td>지원하지 않음</td></tr>
+            <tr><td>PLS</td><td>사용 안함</td></tr>
+            <tr><td>HA</td><td>사용 안함</td></tr>
+            <tr><td>Bypass</td><td>OFF</td></tr>
+            <tr><td>로그 자동 백업</td><td>OFF</td></tr>
+            <tr><td>설정 자동 백업</td><td>OFF</td></tr>
+          </table>  
+        </div>
+      </div>        
+
+    </div>
+
+  </div> 
+
+  <div id="content2" class="clearfix">      <!-- CONTENT2 : 보고서 - 보고서 목록 -->
+    <div class="wrap">
+
+      <div class="path">    <!-- 타이틀 및 경로 -->
+        <ul>
+          <!-- <li><img src="./img/ico_report.svg" alt="report"> <span>보고서</span></li> -->
+          <li>/ 보고서 목록</li>
+          <li> : 생성된 보고서를 볼 수 있습니다.</li>
+        </ul>
+        <ul id="ex-icon">     <!-- 툴 아이콘 메뉴 -->
+          <li><a href="https://192.168.41.103/manual/ko/#dashboard" target="_blank" title="도움말" alt="help"><i class="fas fa-question"></i></a></li>   <!-- 도움말 -->
+          <li id="refresh"><a href="#" title="새로고침" alt="refresh"><i class="fas fa-sync"></i></a></li>   <!-- 새로고침 -->
+          <li><a href="#" title="새창으로 확장" alt="expand"><i class="fas fa-external-link-alt"></i></a></li>   <!-- 확장 -->
+        </ul>
+      </div>
+
+      <!-- 중단 그룹 박스 -->
+      <div id="cen_group4">
+        <div class="roundbox">   test     </div>
+      </div>    
+
+    </div>
+
+  </div>   
+
+  <div id="spinner"><img src="./img/spinner.gif" alt="spinner image"></div>
+
+  <!-- FOOTER -->
+  <footer id="cont_footer">
+    <p>&copy; Penta Security Systems Inc. All rights reserved.</p>
+  </footer>   
+    
+  
+
+</body>
+</html>
