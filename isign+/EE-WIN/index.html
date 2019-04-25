@@ -5,12 +5,71 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>통합 서비스 시스템</title>
     <link rel="stylesheet" href="./css/reset200802.css">
-    <link rel="stylesheet" href="./css/style.css">        
+    <link rel="stylesheet" href="./css/style.css">   
+    <script src="./js/prefixfree.min.js"></script>     
+    <script src="./js/jquery-3.3.1.js"></script>     
+    <script src="./js/app.js"></script>     
     <!--[if IE 8]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->    
 </head>
 <body>
-    통합 서비스 시스템입니다.
+    <!-- HEADER -->
+    <header>
+        <!-- TOP / MENU -->
+        <div id="top_nav">
+            <div id="ci_logo"><img src="./img/ci_logo.svg" alt="ci logo"></div>
+            <h1>통합 지원 서비스</h1>
+            <nav>
+                <ul id="menu">
+                    <li><a href=""><img src="./img/user.svg" alt="user image">Master</a></li>
+                    <li><a href=""><img src="./img/logout.svg" alt="logout image">Logout</a></li>
+                </ul>            
+            </nav>
+        </div>
+        <!-- Notice Baner -->
+        <div id="notice">
+            <p>2019년 ISign+ 프로모션을 진행 중입니다. 문의 전화는 02-2025-6666</p>
+        </div>
+    </header>    
+    <!-- CONTENTs -->
+    <div id="content" class="clearfix">
+        <!-- Manager Box -->
+        <div>
+            <div class="title">
+                <p>MANAGER</p><span>(관리자)</span>
+            </div>
+            <div class="list clearfix">
+                <img src="./img/ico_manager.svg" alt="manager image">
+                <ul>
+                    <li>계정 관리</li>
+                    <li>컨텐츠 관리</li>
+                    <li>제품 교육 관리</li>
+                </ul>
+            </div>
+            <div class="go"><a href="" class="button">바로가기</a></div>
+        </div>
+        
+        <!-- Customer Box -->
+        <div>CUSTOMER</div>
+
+        <!-- Partner Box -->
+        <div>PARTNER</div>
+    </div>
+    <!-- FOOTER -->
+    <footer>
+        <div id="contact">
+            <div class="wrap">
+                <img id="isign_logo" src="./img/isign_logo.svg" alt="isign+ BI logo">
+                <ul class="clearfix">
+                    <li><a href=""><img src="./img/tech365.png" alt="tech365 phone number"></a></li>
+                    <li><a href=""><img src="./img/biznumber.png" alt="inquiry phone number"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="copy">
+            <p>&copy; Penta Security Systems Inc. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
