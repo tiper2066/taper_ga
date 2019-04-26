@@ -68,22 +68,30 @@ nav {
 }
 
 #menu li:first-child {
-  margin-right: 20px;
+  margin-right: 25px;
 }
 
-#menu img {
+#menu li img {
   width: 23px;
   height: 23px;
-  vertical-align: middle;
+  vertical-align: middlåe;
   margin-right: 10px;
 }
 
+#menu li:last-child img {
+  width: 21px;
+  height: 21px;
+}
+
+/* logout 아이콘 크기 조정 */
 #menu li a, #menu li a:visited {
   display: inline-block;
   font-size: 1rem;
   font-weight: 300;
   color: #5aaaf7;
   padding: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 /*--------------------------------------------------------------- 
@@ -138,6 +146,59 @@ nav {
 }
 
 /* 마지막 박스 좌측여백 제거 */
+#content > div:hover {
+  -webkit-box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 그림자 높게 */
+/*----------- Box Animation ----------------*/
+#content > div.manager {
+  /* First Box */
+  opacity: 0;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  -webkit-transition: opacity 0.3s, -webkit-box-shadow 0.3s, -webkit-transform 0.4s;
+  transition: opacity 0.3s, -webkit-box-shadow 0.3s, -webkit-transform 0.4s;
+  transition: box-shadow 0.3s, opacity 0.3s, transform 0.4s;
+  transition: box-shadow 0.3s, opacity 0.3s, transform 0.4s, -webkit-box-shadow 0.3s, -webkit-transform 0.4s;
+  /* 애니메이션 준비  */
+  -webkit-transition-delay: 0;
+          transition-delay: 0;
+  /* 애니메이션 순서 1 */
+}
+
+#content > div.customer {
+  /* Second Box */
+  opacity: 0;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  -webkit-transition: opacity 0.3s, -webkit-box-shadow 0.3s, -webkit-transform 0.4s;
+  transition: opacity 0.3s, -webkit-box-shadow 0.3s, -webkit-transform 0.4s;
+  transition: box-shadow 0.3s, opacity 0.3s, transform 0.4s;
+  transition: box-shadow 0.3s, opacity 0.3s, transform 0.4s, -webkit-box-shadow 0.3s, -webkit-transform 0.4s;
+  /* 애니메이션 준비  */
+  -webkit-transition-delay: 0.07s;
+          transition-delay: 0.07s;
+  /* 애니메이션 순서 2 */
+}
+
+#content > div.partner {
+  /* Third Box */
+  opacity: 0;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  -webkit-transition: opacity 0.3s, -webkit-box-shadow 0.3s, -webkit-transform 0.4s;
+  transition: opacity 0.3s, -webkit-box-shadow 0.3s, -webkit-transform 0.4s;
+  transition: box-shadow 0.3s, opacity 0.3s, transform 0.4s;
+  transition: box-shadow 0.3s, opacity 0.3s, transform 0.4s, -webkit-box-shadow 0.3s, -webkit-transform 0.4s;
+  /* 애니메이션 준비  */
+  -webkit-transition-delay: 0.14s;
+          transition-delay: 0.14s;
+  /* 애니메이션 순서 3 */
+}
+
+/*----------- Box Title ----------------*/
 .title {
   width: 100%;
   position: relative;
@@ -164,16 +225,17 @@ nav {
   position: absolute;
   content: "";
   display: block;
-  left: calc(50% - 15%);
+  left: 0;
   top: 150%;
-  width: 30%;
+  width: 100%;
   height: 1px;
   background-color: #ccc;
 }
 
+/*----------- Box List ----------------*/
 .list {
   text-align: center;
-  margin: 80px 0 60px 0;
+  margin: 80px 0 80px 0;
 }
 
 .list img {
@@ -182,6 +244,17 @@ nav {
   margin-right: 25px;
 }
 
+/* 아이콘 이미지 */
+.customer > div:nth-child(2) img {
+  width: 85px;
+}
+
+/* 2번째 Box 아이콘 사이즈 작게 조정 */
+.partner > div:nth-child(2) img {
+  width: 100px;
+}
+
+/* 3번째 Box 아이콘 사이즈 크게 조정 */
 .list ul {
   display: inline-block;
   padding-top: 4px;
@@ -206,44 +279,39 @@ nav {
   background-color: #898989;
 }
 
+/*---------------- Button --------------*/
 .go {
   clear: both;
   width: 100%;
   text-align: center;
 }
 
-/*---------------- Button --------------*/
+/* 바로가기 버튼 영역 */
 .button {
+  /* 버튼 공통 스타일 */
   padding: 7px 40px;
-  color: #fff;
+  color: #f58220;
   font-size: 1rem;
   font-weight: 300;
-  border: 0;
+  border: 1px solid #f58220;
   border-radius: 3px;
-  cursor: pointer;
+  background-color: #fff;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
-  background-color: #f58220;
 }
 
 .button:hover {
-  opacity: 0.9;
-  -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  background-color: #f58220;
+  cursor: pointer;
 }
 
 .button:active {
-  opacity: 1;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  color: #f58220;
+  background-color: #fff;
+  cursor: pointer;
 }
 
-.btn_blue {
-  background-color: #4476f8;
-}
-
-/* button color - blue */
-/* Manager Box */
 /*--------------------------------------------------------------- 
                              푸 터
 --------------------------------------------------------------- */
@@ -257,18 +325,18 @@ footer {
 
 /*  contact  */
 #contact {
-  height: 140px;
+  height: 200px;
   background-color: #dcdcdc;
 }
 
 #isign_logo {
   width: 150px;
-  margin-top: 40px;
+  margin-top: 70px;
 }
 
 #contact ul {
   float: right;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 #contact li {

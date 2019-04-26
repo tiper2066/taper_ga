@@ -1,5 +1,10 @@
 $(function() {
 
+    /* 박스들 순차 애니메이션  */
+    $("#content > div.manager").css({"opacity" : 1, "transform" : "translateY(0)"});
+    $("#content > div.customer").css({"opacity" : 1, "transform" : "translateY(0)"});
+    $("#content > div.partner").css({"opacity" : 1, "transform" : "translateY(0)"});
+
     /*--------------------------------------------------------
         상단 메뉴 마우스 오버 시 아이콘 및 글자 색상 변경
     ---------------------------------------------------------*/

@@ -20,10 +20,10 @@ header { height: 150px; z-index: 10; }   /* topbar 그림자 보이게 레이어
 #top_nav h1 { display: inline-block; font-size: 1.4rem; font-weight: 400; color: #fff; }   /* 사이트 타이틀 */
 nav { float: right; margin-right: 50px; }   /* 상단 우측 메뉴 영역 */
 #menu li { display: inline-block; }
-#menu li:first-child { margin-right: 20px; }
-#menu img { width: 23px; height: 23px; vertical-align: middle; margin-right: 10px; }
-#menu li a, #menu li a:visited { display: inline-block; font-size: 1rem; font-weight: 300; color: #5aaaf7; padding: 0; }
-// #menu li a:hover, #menu li a:active { color: #fff; cursor: pointer; }
+#menu li:first-child { margin-right: 25px; }
+#menu li img { width: 23px; height: 23px; vertical-align: middlåe; margin-right: 10px; }
+#menu li:last-child img { width: 21px; height: 21px; }     /* logout 아이콘 크기 조정 */
+#menu li a, #menu li a:visited { display: inline-block; font-size: 1rem; font-weight: 300; color: #5aaaf7; padding: 0; transition: all 0.3s; }
 
 /*--------------------------------------------------------------- 
                         상단 홍보 배너
@@ -43,40 +43,50 @@ nav { float: right; margin-right: 50px; }   /* 상단 우측 메뉴 영역 */
     margin-right: 25px; margin-top: 100px; margin-bottom: 100px; padding: 50px; box-shadow: 0 0 10px 2px rgba(0,0,0,0.1);   /* 그림자 */
 }
 #content > div:last-child { margin-right: 0; }   /* 마지막 박스 좌측여백 제거 */
+#content > div:hover { box-shadow: 0 0 15px 10px rgba(0,0,0,0.1); }    /* 그림자 높게 */
 
+/*----------- Box Animation ----------------*/
+#content > div.manager {      /* First Box */
+    opacity: 0; transform: translateY(100px); transition: box-shadow 0.3s, opacity 0.3s, transform 0.4s;     /* 애니메이션 준비  */
+    transition-delay: 0;   /* 애니메이션 순서 1 */    
+}
+#content > div.customer {      /* Second Box */
+    opacity: 0; transform: translateY(100px); transition: box-shadow 0.3s, opacity 0.3s, transform 0.4s;     /* 애니메이션 준비  */
+    transition-delay: 0.07s;   /* 애니메이션 순서 2 */    
+}
+#content > div.partner {      /* Third Box */
+    opacity: 0; transform: translateY(100px); transition: box-shadow 0.3s, opacity 0.3s, transform 0.4s;     /* 애니메이션 준비  */
+    transition-delay: 0.14s;   /* 애니메이션 순서 3 */    
+}
+
+/*----------- Box Title ----------------*/
 .title { width: 100%; position: relative; }
 .title p { text-align: center; font-size: 1.7rem; font-weight: 500; color: #005093; }
 .title span { display: block; text-align: center; font-size: 1.1rem; font-weight: 400; color: #666; padding: 3px 0; }
 .title::after {     /*  분리 라인 ---------------  */
-    position: absolute; content: ""; display: block; left: calc(50% - 15%); top: 150%; width: 30%; height: 1px; background-color: #ccc;
+    // position: absolute; content: ""; display: block; left: calc(50% - 15%); top: 150%; width: 30%; height: 1px; background-color: #ccc;
+    position: absolute; content: ""; display: block; left: 0; top: 150%; width: 100%; height: 1px; background-color: #ccc;
 }
 
-.list { text-align: center; margin: 80px 0 60px 0; }
-.list img { width: 95px; vertical-align: top; margin-right: 25px; }
+/*----------- Box List ----------------*/
+.list { text-align: center; margin: 80px 0 80px 0; }
+.list img { width: 95px; vertical-align: top; margin-right: 25px; }    /* 아이콘 이미지 */
+.customer > div:nth-child(2) img { width: 85px; }      /* 2번째 Box 아이콘 사이즈 작게 조정 */
+.partner > div:nth-child(2) img { width: 100px; }      /* 3번째 Box 아이콘 사이즈 크게 조정 */
 .list ul { display: inline-block; padding-top: 4px; }
 .list ul li { position: relative; font-size: 1.1rem; font-weight: 400; padding-left: 10px; text-align: left; }
 .list ul li::before {
     position: absolute; content: ""; display: block; left: 0; top: 13px; width: 3px; height: 3px; background-color: #898989; 
-    
 }
-.go { clear: both; width: 100%; text-align: center; }
-
+ 
 /*---------------- Button --------------*/
-.button { 
-    padding: 7px 40px; color: #fff; font-size: 1rem; font-weight: 300;
-    border: 0; border-radius: 3px; cursor: pointer; transition: all 0.2s; background-color: #f58220;
+.go { clear: both; width: 100%; text-align: center; }    /* 바로가기 버튼 영역 */
+.button {        /* 버튼 공통 스타일 */
+    padding: 7px 40px; color: #f58220; font-size: 1rem; font-weight: 300;
+    border: 1px solid #f58220; border-radius: 3px; background-color: #fff; transition: all 0.2s;
 }
-.button:hover { opacity: 0.9; box-shadow: 0 3px 10px rgba(0,0,0,0.2); }
-.button:active { opacity: 1; box-shadow: none; } 
-
-.btn_blue { background-color: #4476f8; }    /* button color - blue */
-
-
-
-/* Manager Box */
-
-
-
+.button:hover { color: #fff; background-color: #f58220; cursor: pointer;  }
+.button:active { color: #f58220; background-color: #fff; cursor: pointer; } 
 
 /*--------------------------------------------------------------- 
                              푸 터
@@ -84,9 +94,9 @@ nav { float: right; margin-right: 50px; }   /* 상단 우측 메뉴 영역 */
 footer { position: fixed; left: 0; bottom: 0; width: 100%; min-width: 1200px; }
 
 /*  contact  */
-#contact { height: 140px; background-color: #dcdcdc; }
-#isign_logo { width: 150px; margin-top: 40px; }
-#contact ul { float: right; margin-top: 20px; }
+#contact { height: 200px; background-color: #dcdcdc; }
+#isign_logo { width: 150px; margin-top: 70px; }
+#contact ul { float: right; margin-top: 50px; }
 #contact li { display: inline-block; }
 
 /*  copyright  */
