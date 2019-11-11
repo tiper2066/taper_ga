@@ -1,0 +1,164 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/*--------------------------------------------------------------*/
+/*-                         Variables                          -*/
+/*--------------------------------------------------------------*/
+
+/*======================= colors =================*/
+$color_white: #ffffff;        /* white color */
+$color_basic_text: #222528;       /* basic text color */
+$color_login_body: #8f96a1;     /* login page background color */ 
+$color_gray: #878e95;            /*  button color 회색   */
+$color_border: #d1d1d1;         /* input box border color */
+$color_green: #1ba593;          /*  main green color  */
+$color_main_blue: #2789f2;       /*  main blue color  */
+$color_placeholder_text: #8f96a1;      /* placeholder text color */
+$color_input_shadow: rgba(39, 137, 242, 0.5);  /* input field shadow color */
+$color_box_shadow: rgba(0,0,0,0.2);    /* blockbox shadow color */
+$color_main_gradient: linear-gradient(to right, $color_main_blue, $color_green);  /* main gradient color */
+$color_header_bg: #192032;       /* header background color */
+$color_mainmenu_bg: #283048;     /* left main menu background color */
+$color_content_wrap: #f1f8ff;     /* content block backbround color */
+$color_split_line: #2a344c;      /* menu split line color  */ 
+$color_warning: #ec6873;        /*  warning color  */
+$color_1depth_bg_normal: #20283d;    /* 1depth menu backgorund narmal color */
+$color_1depth_bg_over: #0c101c;      /* 1depth menu backgorund over color */
+$color_table_header_bg: #dbdee1;     /* table head(column) background color */
+$color_tr_border: #cccccc;      /*  table tr bottom line color  */
+$color_tr_bg_2n: #f9f9f9;      /* table tr 2nd 짝수 bg color  */
+$color_attention: #ff9966;       /*  alim attention icon color  */
+$color_disabled: #e9ecef;       /* disabled control background-color */
+
+/*--------------------------------------------------------------*/
+/*-                         Functions                          -*/
+/*--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------*/
+/*-                        Common Style                        -*/
+/*--------------------------------------------------------------*/
+
+/*---------------- Button size --------------*/
+.btn_b { height: 50px; font-size: 1.2rem; font-weight: 500; }
+.btn_n { height: 35px; font-size: 1rem; font-weight: 500; }
+.btn_s { height: 30px; font-size: 0.9rem; font-weight: 500; }
+.wauto { width: 100%; }
+.w180 { width: 180px; }
+.w150 { width: 150px; }
+.w100 { width: 100px; }
+.w60 { width: 60px; }
+.w40 { width: 40px; }
+
+/*---------------- Button blue --------------*/
+.btn_blue { 
+    padding: 0 12px; color: $color_white; background: $color_main_gradient;
+    border: 0; border-radius: 3px; cursor: pointer; transition: all 0.3s;
+}
+.btn_blue:hover { opacity: 0.9; box-shadow: 0 3px 10px $color_box_shadow; }
+.btn_blue:active { opacity: 1; box-shadow: none; } 
+.btn_blue:disabled { opacity: 0.3; box-shadow: none; }
+
+/*---------------- Button white --------------*/
+.btn_white { 
+    padding: 0 12px; color: $color_main_blue; background-color: $color_white;
+    border: 1px solid $color_main_blue; border-radius: 3px; cursor: pointer; transition: all 0.3s;
+}
+.btn_white:hover { opacity: 0.9; box-shadow: 0 3px 10px $color_box_shadow; }
+.btn_white:active { opacity: 1; box-shadow: none; } 
+.btn_white:disabled { opacity: 0.3; box-shadow: none; }
+
+/*---------------- Button white dots --------------*/
+.btn_white_dot { 
+    padding: 0 12px; color: $color_main_blue; // background-color: orange; 
+    border: 1px solid $color_main_blue; border-radius: 3px; cursor: pointer; transition: all 0.3s;
+    background: $color_white url('../img/button_dot.png') no-repeat right 50%;
+}
+.btn_white_dot:hover { opacity: 0.9; box-shadow: 0 3px 10px $color_box_shadow; }
+.btn_white_dot:active { opacity: 1; box-shadow: none; } 
+.btn_white_dot:disabled { opacity: 0.3; box-shadow: none; }
+
+/*---------------- Button Gray --------------*/
+.btn_gray { 
+    padding: 0 12px; color: $color_white; background: $color_gray;
+    border: 0; border-radius: 3px; cursor: pointer; transition: all 0.3s;
+}
+.btn_gray:hover { opacity: 0.9; box-shadow: 0 3px 10px $color_box_shadow; }
+.btn_gray:active { opacity: 1; box-shadow: none; } 
+.btn_gray:disabled { opacity: 0.3; box-shadow: none; }
+
+/*---------------- Button Gray dot --------------*/
+.btn_gray_dot { 
+    padding: 0 12px; color: $color_white; background: $color_gray;
+    border: 0; border-radius: 3px; cursor: pointer; transition: all 0.3s;
+    background: $color_gray url('../img/button_dot_white.png') no-repeat right 50%;
+}
+.btn_gray_dot:hover { opacity: 0.9; box-shadow: 0 3px 10px $color_box_shadow; }
+.btn_gray_dot:active { opacity: 1; box-shadow: none; } 
+.btn_gray_dot:disabled { opacity: 0.3; box-shadow: none; }
+
+/*---------------- Button Gray small --------------*/
+.btn_gray_sm { 
+    padding: 0 8px; color: $color_white; background: $color_gray;
+    border: 0; border-radius: 3px; cursor: pointer; transition: all 0.3s;
+}
+.btn_gray_sm:hover { opacity: 0.9; box-shadow: 0 3px 10px $color_box_shadow; }
+.btn_gray_sm:active { opacity: 1; box-shadow: none; } 
+.btn_gray_sm:disabled { opacity: 0.3; box-shadow: none; }
+
+/*---------------- Button Gray small dot --------------*/
+.btn_gray_sm_dot { 
+    padding: 0 8px; color: $color_white; background: $color_gray;
+    border: 0; border-radius: 3px; cursor: pointer; transition: all 0.3s;
+    background: $color_gray url('../img/button_dot_white.png') no-repeat 35px 50%;
+}
+.btn_gray_sm_dot:hover { opacity: 0.9; box-shadow: 0 3px 10px $color_box_shadow; }
+.btn_gray_sm_dot:active { opacity: 1; box-shadow: none; } 
+.btn_gray_sm_dot:disabled { opacity: 0.3; box-shadow: none; }
+
+/*----------------- Input --------------*/
+input[type="text"], input[type="password"], input[type="number"], input[type="date"], input[type="time"] { 
+    height: 35px; border: 1px solid $color_border; font-size: 0.9rem; font-weight: 100;
+    color: $color_basic_text; padding: 0 10px; border-radius: 2px; transition: all 0.3s;
+}
+input[type="text"]:focus, input[type="password"]:focus, input[type="number"]:focus, input[type="date"]:focus, input[type="time"]:focus
+input[type="text"]:hover, input[type="password"]:hover, input[type="number"]:hover, input[type="date"]:hover, input[type="time"]:hover
+{ border: 1px solid $color_main_blue; box-shadow: 0 0 5px $color_input_shadow }
+input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="number"]::placeholder { color: $color_placeholder_text; }
+input[type="text"]:disabled , input[type="password"]:disabled , input[type="number"]:disabled, input[type="date"]:disabled, input[type="time"]:disabled { background-color: $color_disabled; color: $color_tr_border; box-shadow: none; }
+input[type="text"]:read-only , input[type="password"]:read-only , input[type="number"]:read-only, input[type="date"]:read-only, input[type="time"]:read-only { background-color: $color_disabled; color: $color_basic_text; box-shadow: none; }
+
+/*------------- select menu ( no label big size ) ----------*/
+.select_big { position: relative; border: 0; }
+.select_big select {     
+    width: 100%; height: 35px; border-radius: 2px; z-index: 1; border: 1px solid $color_border; padding: 0 10px; transition: all 0.3s; 
+    font-size: 0.9rem; font-weight: 300; line-height: 35px; color: $color_basic_text; background-color: $color_white;
+    filter:alpha(opacity=0); -webkit-appearance: none; -moz-appearance: none; appearance: none; 
+}
+.select_big select:hover { border: 1px solid $color_main_blue; box-shadow: 0 0 5px $color_input_shadow; }
+.select_big::before {     /* triangle dot */
+    content: ""; position: absolute; top: 50%; right: 15px; width: 0; height: 0; margin-top: -1px; 
+    border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid $color_basic_text; 
+}
+.select_big select:disabled { background-color: $color_disabled; color: $color_tr_border; box-shadow: none; }
+
+/*------------- check Box (with label) ----------*/
+input[type="checkbox"] { display: none; }
+input[type="checkbox"] + label { cursor: pointer; vertical-align: middle; }
+input[type="checkbox"] + label span { 
+    display: inline-block; width: 16px; height: 15px; vertical-align: middle;
+    cursor: pointer; background: url("../img/icon_check_off.png") left top no-repeat; background-size: cover; 
+}
+input[type="checkbox"]:checked + label span { background: url("../img/icon_check_ov.png") left top no-repeat; background-size: cover; }
+//input[type="checkbox"]:disabled { opacity: 0.5; }
+input[type="checkbox"]:disabled + label span { background: url('../img/icon_check_off.png') left top no-repeat; background-size: cover; }
+input[type="checkbox"]:disabled + label { color: $color_placeholder_text; }
+
+html { 
+    font-size: 14px; font-weight: 300; color: $color_basic_text;   /* rem unit */
+    body { 
+        font-family: "Noto Sans KR", "Malgun Gothic", sans-serif; 
+    }
+} 

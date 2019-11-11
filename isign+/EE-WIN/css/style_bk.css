@@ -1,0 +1,366 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&subset=korean");
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  color: #414141;
+  font-size: 14px;
+  font-weight: 300;
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f6;
+  min-width: 1200px;
+}
+
+.wrap {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/*--------------------------------------------------------------- 
+                    헤더 ( ci logo , menu )
+--------------------------------------------------------------- */
+header {
+  height: 150px;
+}
+
+/* topbar 그림자 보이게 레이어 올려줌 */
+#top_nav {
+  /* 상단 topbar 영역 */
+  position: relative;
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+  background-color: #005093;
+  -webkit-box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+  /* 그림자 */
+}
+
+#ci_logo {
+  position: absolute;
+  left: 50px;
+  top: 38px;
+  z-index: 100;
+}
+
+/* ci 로고 영역 */
+#ci_logo img {
+  width: 182px;
+  height: 21px;
+}
+
+/* ci 로고 이미지 */
+#top_nav h1 {
+  position: absolute;
+  left: 260px;
+  top: 0;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+/* 사이트 타이틀 */
+nav {
+  float: right;
+  margin-right: 50px;
+}
+
+/* 상단 우측 메뉴 영역 */
+#menu li {
+  display: inline-block;
+}
+
+#menu li:first-child {
+  margin-right: 25px;
+}
+
+#menu li img {
+  width: 23px;
+  height: 23px;
+  vertical-align: middlåe;
+  margin-right: 10px;
+}
+
+#menu li:last-child img {
+  width: 21px;
+  height: 21px;
+}
+
+/* logout 아이콘 크기 조정 */
+#menu li a, #menu li a:visited {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #5aaaf7;
+  padding: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/*--------------------------------------------------------------- 
+                        상단 홍보 배너
+--------------------------------------------------------------- */
+#notice {
+  width: 100%;
+  background-color: #007bc4;
+  z-index: -10;
+}
+
+#notice p {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 400;
+  border: 1px solid #007bc4;
+  /* 크기를 잡아아 중앙정렬됨 */
+}
+
+/*--------------------------------------------------------------- 
+                         콘텐츠 ( 3 Box )
+--------------------------------------------------------------- */
+/* Box 공통 */
+#content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#content > div {
+  float: left;
+  width: calc(33.333% - (50px / 3));
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  z-index: 100;
+  margin-right: 25px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding: 50px;
+  -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+  /* 그림자 */
+}
+
+#content > div:last-child {
+  margin-right: 0;
+}
+
+/* 마지막 박스 좌측여백 제거 */
+#content > div:hover {
+  -webkit-box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 그림자 높게 */
+/*----------- Box Animation ----------------*/
+#content > div.manager {
+  /* First Box */
+  opacity: 0;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  -webkit-transition: opacity 0.3s, -webkit-box-shadow 0.3s, -webkit-transform 0.4s;
+  transition: opacity 0.3s, -webkit-box-shadow 0.3s, -webkit-transform 0.4s;
+  transition: box-shadow 0.3s, opacity 0.3s, transform 0.4s;
+  transition: box-shadow 0.3s, opacity 0.3s, transform 0.4s, -webkit-box-shadow 0.3s, -webkit-transform 0.4s;
+  /* 애니메이션 준비  */
+  -webkit-transition-delay: 0;
+          transition-delay: 0;
+  /* 애니메이션 순서 1 */
+}
+
+#content > div.customer {
+  /* Second Box */
+  opacity: 0;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  -webkit-transition: opacity 0.3s, -webkit-box-shadow 0.3s, -webkit-transform 0.4s;
+  transition: opacity 0.3s, -webkit-box-shadow 0.3s, -webkit-transform 0.4s;
+  transition: box-shadow 0.3s, opacity 0.3s, transform 0.4s;
+  transition: box-shadow 0.3s, opacity 0.3s, transform 0.4s, -webkit-box-shadow 0.3s, -webkit-transform 0.4s;
+  /* 애니메이션 준비  */
+  -webkit-transition-delay: 0.07s;
+          transition-delay: 0.07s;
+  /* 애니메이션 순서 2 */
+}
+
+#content > div.partner {
+  /* Third Box */
+  opacity: 0;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  -webkit-transition: opacity 0.3s, -webkit-box-shadow 0.3s, -webkit-transform 0.4s;
+  transition: opacity 0.3s, -webkit-box-shadow 0.3s, -webkit-transform 0.4s;
+  transition: box-shadow 0.3s, opacity 0.3s, transform 0.4s;
+  transition: box-shadow 0.3s, opacity 0.3s, transform 0.4s, -webkit-box-shadow 0.3s, -webkit-transform 0.4s;
+  /* 애니메이션 준비  */
+  -webkit-transition-delay: 0.14s;
+          transition-delay: 0.14s;
+  /* 애니메이션 순서 3 */
+}
+
+/*----------- Box Title ----------------*/
+.title {
+  width: 100%;
+  position: relative;
+}
+
+.title p {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: #005093;
+}
+
+.title span {
+  display: block;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #666;
+  padding: 3px 0;
+}
+
+.title::after {
+  /*  분리 라인 ---------------  */
+  position: absolute;
+  content: "";
+  display: block;
+  left: 0;
+  top: 150%;
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+}
+
+/*----------- Box List ----------------*/
+.list {
+  text-align: center;
+  margin: 80px 0 80px 0;
+}
+
+.list img {
+  width: 95px;
+  vertical-align: top;
+  margin-right: 25px;
+}
+
+/* 아이콘 이미지 */
+.customer > div:nth-child(2) img {
+  width: 85px;
+}
+
+/* 2번째 Box 아이콘 사이즈 작게 조정 */
+.partner > div:nth-child(2) img {
+  width: 100px;
+}
+
+/* 3번째 Box 아이콘 사이즈 크게 조정 */
+.list ul {
+  display: inline-block;
+  padding-top: 4px;
+}
+
+.list ul li {
+  position: relative;
+  font-size: 1.1rem;
+  font-weight: 400;
+  padding-left: 10px;
+  text-align: left;
+}
+
+.list ul li::before {
+  position: absolute;
+  content: "";
+  display: block;
+  left: 0;
+  top: 13px;
+  width: 3px;
+  height: 3px;
+  background-color: #898989;
+}
+
+/*---------------- Button --------------*/
+.go {
+  clear: both;
+  width: 100%;
+  text-align: center;
+}
+
+/* 바로가기 버튼 영역 */
+.button {
+  /* 버튼 공통 스타일 */
+  padding: 7px 40px;
+  color: #f58220;
+  font-size: 1rem;
+  font-weight: 300;
+  border: 1px solid #f58220;
+  border-radius: 3px;
+  background-color: #fff;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.button:hover {
+  color: #fff;
+  background-color: #f58220;
+  cursor: pointer;
+}
+
+.button:active {
+  color: #f58220;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/*--------------------------------------------------------------- 
+                             푸 터
+--------------------------------------------------------------- */
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  min-width: 1200px;
+}
+
+/*  contact  */
+#contact {
+  height: 200px;
+  background-color: #dcdcdc;
+}
+
+#isign_logo {
+  width: 150px;
+  margin-top: 70px;
+}
+
+#contact ul {
+  float: right;
+  margin-top: 50px;
+}
+
+#contact li {
+  display: inline-block;
+}
+
+#contact li:first-child {
+  margin-right: 15px;
+}
+
+/*  copyright  */
+#copy {
+  height: 40px;
+  line-height: 40px;
+  background-color: #2e2e2e;
+}
+
+#copy p {
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 100;
+  color: #919191;
+}
+/*# sourceMappingURL=style_bk.css.map */

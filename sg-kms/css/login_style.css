@@ -1,0 +1,771 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*--------------------------------------------------------------*/
+/*-                         Variables                          -*/
+/*--------------------------------------------------------------*/
+/*======================= colors =================*/
+/* white color */
+/* basic text color */
+/* login page background color */
+/*  button color 회색   */
+/* input box border color */
+/*  main green color  */
+/*  main blue color  */
+/* placeholder text color */
+/* input field shadow color */
+/* blockbox shadow color */
+/* main gradient color */
+/* header background color */
+/* left main menu background color */
+/* content block backbround color */
+/* menu split line color  */
+/*  warning color  */
+/* 1depth menu backgorund narmal color */
+/* 1depth menu backgorund over color */
+/* table head(column) background color */
+/*  table tr bottom line color  */
+/* table tr 2nd 짝수 bg color  */
+/*  alim attention icon color  */
+/* disabled control background-color */
+/*--------------------------------------------------------------*/
+/*-                         Functions                          -*/
+/*--------------------------------------------------------------*/
+/*--------------------------------------------------------------*/
+/*-                        Common Style                        -*/
+/*--------------------------------------------------------------*/
+/*---------------- Button size --------------*/
+.btn_b {
+  height: 50px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.btn_n {
+  height: 35px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.btn_s {
+  height: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.wauto {
+  width: 100%;
+}
+
+.w180 {
+  width: 180px;
+}
+
+.w150 {
+  width: 150px;
+}
+
+.w100 {
+  width: 100px;
+}
+
+.w60 {
+  width: 60px;
+}
+
+.w40 {
+  width: 40px;
+}
+
+/*---------------- Button blue --------------*/
+.btn_blue {
+  padding: 0 12px;
+  color: #ffffff;
+  background: -webkit-gradient(linear, left top, right top, from(#2789f2), to(#1ba593));
+  background: linear-gradient(to right, #2789f2, #1ba593);
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn_blue:hover {
+  opacity: 0.9;
+  -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn_blue:active {
+  opacity: 1;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn_blue:disabled {
+  opacity: 0.3;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/*---------------- Button white --------------*/
+.btn_white {
+  padding: 0 12px;
+  color: #2789f2;
+  background-color: #ffffff;
+  border: 1px solid #2789f2;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn_white:hover {
+  opacity: 0.9;
+  -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn_white:active {
+  opacity: 1;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn_white:disabled {
+  opacity: 0.3;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/*---------------- Button white dots --------------*/
+.btn_white_dot {
+  padding: 0 12px;
+  color: #2789f2;
+  border: 1px solid #2789f2;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background: #ffffff url("../img/button_dot.png") no-repeat right 50%;
+}
+
+.btn_white_dot:hover {
+  opacity: 0.9;
+  -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn_white_dot:active {
+  opacity: 1;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn_white_dot:disabled {
+  opacity: 0.3;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/*---------------- Button Gray --------------*/
+.btn_gray {
+  padding: 0 12px;
+  color: #ffffff;
+  background: #878e95;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn_gray:hover {
+  opacity: 0.9;
+  -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn_gray:active {
+  opacity: 1;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn_gray:disabled {
+  opacity: 0.3;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/*---------------- Button Gray dot --------------*/
+.btn_gray_dot {
+  padding: 0 12px;
+  color: #ffffff;
+  background: #878e95;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background: #878e95 url("../img/button_dot_white.png") no-repeat right 50%;
+}
+
+.btn_gray_dot:hover {
+  opacity: 0.9;
+  -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn_gray_dot:active {
+  opacity: 1;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn_gray_dot:disabled {
+  opacity: 0.3;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/*---------------- Button Gray small --------------*/
+.btn_gray_sm {
+  padding: 0 8px;
+  color: #ffffff;
+  background: #878e95;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn_gray_sm:hover {
+  opacity: 0.9;
+  -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn_gray_sm:active {
+  opacity: 1;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn_gray_sm:disabled {
+  opacity: 0.3;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/*---------------- Button Gray small dot --------------*/
+.btn_gray_sm_dot {
+  padding: 0 8px;
+  color: #ffffff;
+  background: #878e95;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background: #878e95 url("../img/button_dot_white.png") no-repeat 35px 50%;
+}
+
+.btn_gray_sm_dot:hover {
+  opacity: 0.9;
+  -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn_gray_sm_dot:active {
+  opacity: 1;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn_gray_sm_dot:disabled {
+  opacity: 0.3;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/*----------------- Input --------------*/
+input[type="text"], input[type="password"], input[type="number"], input[type="date"], input[type="time"] {
+  height: 35px;
+  border: 1px solid #d1d1d1;
+  font-size: 0.9rem;
+  font-weight: 100;
+  color: #222528;
+  padding: 0 10px;
+  border-radius: 2px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="number"]:focus, input[type="date"]:focus, input[type="time"]:focus
+input[type="text"]:hover, input[type="password"]:hover, input[type="number"]:hover, input[type="date"]:hover, input[type="time"]:hover {
+  border: 1px solid #2789f2;
+  -webkit-box-shadow: 0 0 5px rgba(39, 137, 242, 0.5);
+          box-shadow: 0 0 5px rgba(39, 137, 242, 0.5);
+}
+
+input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, input[type="number"]::-webkit-input-placeholder {
+  color: #8f96a1;
+}
+
+input[type="text"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder, input[type="number"]:-ms-input-placeholder {
+  color: #8f96a1;
+}
+
+input[type="text"]::-ms-input-placeholder, input[type="password"]::-ms-input-placeholder, input[type="number"]::-ms-input-placeholder {
+  color: #8f96a1;
+}
+
+input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="number"]::placeholder {
+  color: #8f96a1;
+}
+
+input[type="text"]:disabled, input[type="password"]:disabled, input[type="number"]:disabled, input[type="date"]:disabled, input[type="time"]:disabled {
+  background-color: #e9ecef;
+  color: #cccccc;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+input[type="text"]:-moz-read-only, input[type="password"]:-moz-read-only, input[type="number"]:-moz-read-only, input[type="date"]:-moz-read-only, input[type="time"]:-moz-read-only {
+  background-color: #e9ecef;
+  color: #222528;
+  box-shadow: none;
+}
+
+input[type="text"]:read-only, input[type="password"]:read-only, input[type="number"]:read-only, input[type="date"]:read-only, input[type="time"]:read-only {
+  background-color: #e9ecef;
+  color: #222528;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/*------------- select menu ( no label big size ) ----------*/
+.select_big {
+  position: relative;
+  border: 0;
+}
+
+.select_big select {
+  width: 100%;
+  height: 35px;
+  border-radius: 2px;
+  z-index: 1;
+  border: 1px solid #d1d1d1;
+  padding: 0 10px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 35px;
+  color: #222528;
+  background-color: #ffffff;
+  filter: alpha(opacity=0);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.select_big select:hover {
+  border: 1px solid #2789f2;
+  -webkit-box-shadow: 0 0 5px rgba(39, 137, 242, 0.5);
+          box-shadow: 0 0 5px rgba(39, 137, 242, 0.5);
+}
+
+.select_big::before {
+  /* triangle dot */
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  width: 0;
+  height: 0;
+  margin-top: -1px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #222528;
+}
+
+.select_big select:disabled {
+  background-color: #e9ecef;
+  color: #cccccc;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/*------------- check Box (with label) ----------*/
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + label {
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+input[type="checkbox"] + label span {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  vertical-align: middle;
+  cursor: pointer;
+  background: url("../img/icon_check_off.png") left top no-repeat;
+  background-size: cover;
+}
+
+input[type="checkbox"]:checked + label span {
+  background: url("../img/icon_check_ov.png") left top no-repeat;
+  background-size: cover;
+}
+
+input[type="checkbox"]:disabled + label span {
+  background: url("../img/icon_check_off.png") left top no-repeat;
+  background-size: cover;
+}
+
+input[type="checkbox"]:disabled + label {
+  color: #8f96a1;
+}
+
+html {
+  font-size: 14px;
+  font-weight: 300;
+  color: #222528;
+  /* rem unit */
+}
+
+html body {
+  font-family: "Noto Sans KR", "Malgun Gothic", sans-serif;
+}
+
+/*--------------------------------------------------------------*/
+/*-                         Login page                         -*/
+/*--------------------------------------------------------------*/
+/*==========================  그라디언트 버튼 우측 돗 스타일 함수 ==========================*/
+/*==========================  닫기 X 버튼  ==========================*/
+html body {
+  background-color: #8f96a1;
+  /*-------------------------- Modal Win : 장비 추가 ------------------------*/
+  /*==========================  Overlay 설정  =================================== */
+}
+
+html body #wrap {
+  position: absolute;
+  display: block;
+  width: 800px;
+  height: 500px;
+  background-image: url("../img/loginbox_bg.jpg");
+  border-radius: 5px;
+  left: calc(50% - 400px);
+  top: calc(55% - 250px);
+  padding: 70px 70px 35px 70px;
+  -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: top 0.5s, -webkit-transform 1s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+html body #wrap #login_box {
+  /* 로그인 영역 */
+  width: 400px;
+  height: auto;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  /* 애니메이션 준비  */
+}
+
+html body #wrap #login_box h1 {
+  font-size: 2.1rem;
+  margin: 0 0 70px 0;
+  font-weight: 500;
+}
+
+html body #wrap #login_box h1 span {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #8f96a1;
+}
+
+html body #wrap #login_box form {
+  width: 328px;
+}
+
+html body #wrap #login_box form div {
+  margin: 10px 0;
+}
+
+html body #wrap #login_copy {
+  position: absolute;
+  left: 70px;
+  bottom: 35px;
+  height: 15px;
+  line-height: 15px;
+  font-size: 0.8rem;
+  font-weight: 100;
+}
+
+html body #wrap #login_copy img {
+  vertical-align: top;
+}
+
+html body #hwsetup_box {
+  /* 장비 설정 목록 박스 */
+  position: absolute;
+  top: calc(55% - 290px);
+  left: calc(50% - 1px);
+  width: 380px;
+  height: auto;
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  /* 애니메이션 준비  */
+}
+
+html body #hwsetup_box h1 {
+  font-size: 2rem;
+  margin: 0 0 20px 0;
+  font-weight: 500;
+}
+
+html body #hwsetup_box h1 span {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #8f96a1;
+}
+
+html body #hwsetup_box #controls form .right {
+  /* 추가, 내보내기 등 버튼들 */
+  float: right;
+  margin: 0 0 10px 0;
+  position: relative;
+  /*- Button blue dot image -*/
+}
+
+html body #hwsetup_box #controls form .right #btn_dot {
+  position: absolute;
+  display: inline-block;
+  left: 57px;
+  top: 12px;
+}
+
+html body #hwsetup_box #controls form .right input[type='button'] {
+  margin-left: 5px;
+}
+
+html body #hwsetup_box #hwlist_table {
+  /*--------- 장비 목록 테이블 -------------*/
+  clear: both;
+  width: 100%;
+  height: 180px;
+  padding: 0;
+  overflow-y: auto;
+  /*------ 스크롤바 숨기기  --------*/
+}
+
+html body #hwsetup_box #hwlist_table table {
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+html body #hwsetup_box #hwlist_table table tbody tr {
+  border-bottom: 1px solid #cccccc;
+  background-color: #ffffff;
+}
+
+html body #hwsetup_box #hwlist_table table tbody tr td {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 130px;
+  /*----------- 말줄임 처리 */
+}
+
+html body #hwsetup_box #hwlist_table table tbody tr td img {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 3px;
+}
+
+html body #hwsetup_box #hwlist_table table tbody tr:last-child {
+  border-bottom: 1px solid #222528;
+}
+
+html body #hwsetup_box #hwlist_table table tbody tr:nth-child(2n) {
+  background-color: #f9f9f9;
+}
+
+html body #hwsetup_box #hwlist_table table thead th {
+  height: 40px;
+  width: auto;
+  line-height: 40px;
+  font-weight: 500;
+  padding: 0 10px;
+  background-color: #dbdee1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 130px;
+  /*----------- 말줄임 처리 */
+}
+
+html body #hwsetup_box #hwlist_table table thead th img {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 3px;
+}
+
+html body #hwsetup_box #hwlist_table::-webkit-scrollbar {
+  width: 0 !important;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}
+
+html body #hwsetup_box #gologin {
+  margin-top: 20px;
+}
+
+html body #modal_hwaccessinfo_add {
+  position: fixed;
+  left: calc(50% - 240px);
+  top: calc(50% - 450px);
+  width: 480px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  z-index: 100;
+  opacity: 0;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+  /* 애니메이션 준비  */
+  /*--------  X 버튼 (right, top, bgcolor) -----------*/
+}
+
+html body #modal_hwaccessinfo_add h2 {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  padding: 0 30px;
+  line-height: 60px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #f1f8ff;
+  background-color: #283048;
+  border-radius: 5px 5px 0 0;
+}
+
+html body #modal_hwaccessinfo_add ul {
+  padding: 10px 30px 20px 30px;
+}
+
+html body #modal_hwaccessinfo_add ul li {
+  height: 45px;
+  line-height: 45px;
+}
+
+html body #modal_hwaccessinfo_add ul li p {
+  display: block;
+  height: 20px;
+  font-size: 0.9rem;
+}
+
+html body #modal_hwaccessinfo_add ul li label {
+  display: inline-block;
+  width: 160px;
+}
+
+html body #modal_hwaccessinfo_add ul li input[type='text'] {
+  width: 260px;
+}
+
+html body #modal_hwaccessinfo_add ul li h3 {
+  /*-------------- 그룹 타이틀 ----------*/
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+html body #modal_hwaccessinfo_add ul li input[type='button'] {
+  margin-left: 10px;
+}
+
+html body #modal_hwaccessinfo_add ul li:first-child {
+  margin-bottom: 10px;
+}
+
+html body #modal_hwaccessinfo_add ul li:nth-child(7) input[type='text'], html body #modal_hwaccessinfo_add ul li:nth-child(9) input[type='text'], html body #modal_hwaccessinfo_add ul li:nth-child(10) input[type='text'], html body #modal_hwaccessinfo_add ul li:nth-child(12) input[type='text'], html body #modal_hwaccessinfo_add ul li:nth-child(13) input[type='text'], html body #modal_hwaccessinfo_add ul li:nth-child(14) input[type='text'], html body #modal_hwaccessinfo_add ul li:nth-child(15) input[type='text'] {
+  width: 190px;
+}
+
+html body #modal_hwaccessinfo_add ul li:last-child {
+  text-align: right;
+  margin-top: 20px;
+}
+
+html body #modal_hwaccessinfo_add a {
+  position: absolute;
+  right: 24px;
+  top: 22px;
+  width: 16px;
+  height: 16px;
+  opacity: 0.3;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+html body #modal_hwaccessinfo_add a:hover {
+  opacity: 1;
+}
+
+html body #modal_hwaccessinfo_add a:before, html body #modal_hwaccessinfo_add a:after {
+  position: absolute;
+  left: 0;
+  content: '';
+  height: 16px;
+  width: 2px;
+  background-color: #f1f8ff;
+}
+
+html body #modal_hwaccessinfo_add a:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+html body #modal_hwaccessinfo_add a:after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+html body #overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+/*# sourceMappingURL=login_style.css.map */

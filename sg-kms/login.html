@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <title>D'Amo SG-KMS - Security Gateway Key Management</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">    
+  <link rel="stylesheet" href="css/reset200802.css">
+  <link rel="stylesheet" href="css/login_style.css">
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/app.js"></script>
+  <!--[if IE 8]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div id="wrap">
+    <!--//=================  로그인 화면 ======================//-->
+    <div id="login_box">
+      <h1>Login<span> - D'Amo SG-KMS</span></h1>
+      <form action="index.html" method="get">
+        <div class="select_big">
+          <select>
+            <option selected>장비 선택</option>
+            <option>장비 - 4.0.104.1</option>
+            <option>장비 - test</option>
+            <option>장비 - 4.0.104.12</option>
+            <option>장비 - test 기획실</option>
+          </select>      
+        </div>
+        <div>
+          <input type="password" name="password" placeholder="인증서 암호" class="wauto">
+        </div><br>
+        <div>
+          <input type="submit" value="LOGIN" class="btn_blue btn_b wauto">
+        </div>
+        <div>
+          <input type="button" value="장비설정" class="btn_white_dot btn_n wauto">
+        </div>
+      </form>
+    </div>   
+    <p id="login_copy"><img src="/img/ci_logo.png" alt="penta logo">&nbsp;&nbsp;&nbsp; &copy; Penta Security Systems Inc. All rights reserved.</p>        
+  </div>
+
+  <!--//=================  장비 설정 화면 ======================//-->
+  <div id="hwsetup_box">
+    <h1>장비 설정</h1>
+    <div id="controls">   <!-- 버튼들 -->
+      <form>
+        <div class="right">
+          <input type="button" value="추가" class="btn_blue btn_n w60"><img id="btn_dot" src="./img/button_dot_white.png">  <!-- 그라디언트 버튼 돗 -->
+          <input type="button" value="변경" class="btn_white btn_n w60">
+          <input type="button" value="삭제" class="btn_white btn_n w60">
+        </div>
+      </form>
+    </div>  
+    <div id="hwlist_table">       <!--//  장비목록 테이블 //-->
+      <table>
+        <thead>   <!-- 컬럼 헤더 -->
+          <tr>
+            <th>이름 (별칭)</th>
+            <th>장비 IP</th>
+            <th>이중화 장비 IP</th>
+          </tr>
+        </thead>
+        <tbody>   <!-- 내용  -->
+          <tr>    <!-- line 1 -->
+            <td>4.0.104.1</td>
+            <td>10.0.61.232</td>
+            <td>---</td>
+          </tr>
+          <tr>    <!-- line 2 -->
+            <td>4.0.105.2</td>
+            <td>10.0.65.22</td>
+            <td>---</td>
+          </tr>      
+          <tr>    <!-- line 3 -->
+            <td>4.0.104.1</td>
+            <td>10.0.61.232</td>
+            <td>---</td>
+          </tr>   
+          <tr>    <!-- line 3 -->
+            <td>4.0.104.1</td>
+            <td>10.0.61.232</td>
+            <td>---</td>
+          </tr>                                                                               
+        </tbody>
+      </table>
+    </div> 
+
+    <div id="gologin">
+      <input type="button" value="닫기" class="btn_white btn_n wauto">
+    </div>
+  </div>  
+
+  <!--//=================  장비 (접속 정보) 추가 팝업 ======================//-->
+  <div id="modal_hwaccessinfo_add">
+    <h2>장비 접속 정보 설정 추가 및 변경</h2><a href="#" class="close"></a>
+    <ul>
+      <li>
+        <p>D'Amo SG-KMS 장비의 접속 정보를 추가, 변경합니다.</p>
+      </li>
+      <li>
+        <h3>장비 등록</h3>
+      </li>       
+      <li>
+        <label>이름 (별칭)</label><input type="text" id="nicname" value="4.0.104.1">
+      </li>
+      <li>
+        <label>장비 IP</label><input class="ip_address" type="text" name="hw_ip" placeholder="xxx.xxx.xxx.xxx">
+      </li> 
+      <li>
+        <label>(이중화 시) 이중화 장비 IP</label><input class="ip_address" type="text" name="multi_hw_ip" placeholder="xxx.xxx.xxx.xxx">
+      </li> 
+      <li>
+        <h3>사이트 공개키 등록</h3>
+      </li>        
+      <li>
+        <label>사이트 공개키</label><input type="text" id="site_publickey" value="C:\Users\Administrator\"><input type="button" value="등록" class="btn_setup btn_gray btn_n w60">
+      </li>   
+      <li>
+        <h3>관리자 인증서 등록</h3>
+      </li>               
+      <li>
+        <label>관리자 공개키</label><input type="text" id="admin_publickey" value="C:\Users\Administrator\"><input type="button" value="등록" class="btn_setup btn_gray btn_n w60">
+      </li>       
+      <li>
+        <label>관리자 개인키</label><input type="text" id="admin_persnalckey" value="C:\Users\Administrator\"><input type="button" value="등록" class="btn_setup btn_gray btn_n w60">
+      </li>    
+      <li>
+        <h3>서버 포트 정보</h3>
+      </li>            
+      <li>
+        <label>장비 관리 Port</label><input type="text" id="hwmng_port" value="11180"><input type="button" value="변경" class="btn_setup btn_gray btn_n w60">
+      </li>   
+      <li>
+        <label>장비 제어 Port</label><input type="text" id="hwcontrol_port" value="3535" readonly><input type="button" value="변경" class="btn_setup btn_gray btn_n w60">
+      </li>   
+      <li>
+        <label>이중화 장비 관리 Port</label><input type="text" id="multi_hwmng_port" value="11180" readonly><input type="button" value="변경" class="btn_setup btn_gray btn_n w60">
+      </li>  
+      <li>
+        <label>이중화 장비 제어 Port</label><input type="text" id="multi_hwcontrol_port" value="3535" readonly><input type="button" value="변경" class="btn_setup btn_gray btn_n w60">
+      </li>                 
+      <li>
+        <input type="button" value="확인" class="btn_ok btn_blue btn_n w60"><input type="button" value="취소" class="btn_cancel btn_white btn_n w60">
+      </li>                
+    </ul>
+  </div>   
+  <!--//---------------------------------------------------------//-->
+  <!--          overlay pannel (팝업뜰때 전체를 덮는 막)           -->
+  <!--//---------------------------------------------------------//-->  
+  <div id="overlay"></div>  
+
+</body>
+</html>
